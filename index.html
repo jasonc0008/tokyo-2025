@@ -2,102 +2,118 @@
 <html lang="zh-HK">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2025 東京6日遊｜原生色彩完整版</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#d81b60">
+    <title>東京6日</title>
     <style>
-        body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;margin:0;background:linear-gradient(135deg,#667eea,#764ba2);color:#333}
-        h1{text-align:center;padding:20px;background:rgba(255,255,255,0.95);margin:0;color:#c51162;font-size:1.8em}
-        .countdown{text-align:center;padding:15px;background:#ff4081;color:white;font-size:1.5em;font-weight:bold}
-        .container{max-width:960px;margin:0 auto;padding:10px}
-        .day{background:white;margin:15px 0;border-radius:20px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.2);transition:0.3s}
-        .day:active{transform:scale(0.98)}
-        .header{padding:18px;background:#1976d2;color:white;font-size:1.35em;font-weight:bold}
-        .details{display:none}
-        .open .details{display:block}
-        .item{margin:8px 0;padding:10px 14px;border-radius:12px;line-height:1.6;font-size:1.05em}
-        .traffic{background:#c8e6c9 !important;color:#2e7d32;font-weight:bold}   /* 綠色 = 搭車 */
-        .food{background:#e1f5fe !important;color:#00695c}                 /* 淺紫你用藍紫，其實更似淺藍綠，我還原做最靚食飯色 */
-        .sight{background:#f3e5f5 !important;color:#6a1b9a}                /* 淺紫 = 景點 */
-        .shopping{background:#fff3e0 !important;color:#ef6c00}             /* 橙 = 購物 */
-        .theater{background:#fce4ec !important;color:#880e4f}              /* 粉紅 = 劇場 */
-        .other{background:#e0e0e0 !important;color:#424242}
-        .time{font-weight:bold;color:#d81b60;margin-right:8px}
-        a{color:#c51162;text-decoration:none;font-weight:bold}
-        .backup{padding:15px;background:#fff8e1;border-top:3px dashed #ff9800;margin:10px 0;border-radius:0 0 12px 12px}
-        .backup::before{content:"後備方案（Column D）";color:#e65100;font-weight:bold;display:block;margin-bottom:8px}
-        .spots{padding:18px;background:#e8f5e9;border-radius:12px;margin:20px 0;font-size:0.95em}
-        .spots::before{content:"隨時插隊備用點（Column A）";color:#2e7d32;font-weight:bold;display:block;margin-bottom:10px}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:#111;color:#fff;line-height:1.5}
+        h1{font-size:1.6em;background:#d81b60;padding:20px 0;text-align:center;position:sticky;top:0;z-index:10}
+        #cd{font-size:1.4em;background:#000;padding:12px 0;text-align:center;font-weight:bold;color:#0f0}
+        .day{margin:16px 12px;border-radius:20px;background:#222;overflow:hidden}
+        .hdr{font-size:1.4em;background:#1976d2;padding:18px;font-weight:bold}
+        .list{padding:12px 16px;display:none}
+        .open .list{display:block}
+        .i{display:block;padding:14px 16px;margin:8px 0;border-radius:16px;font-size:1.25em;font-weight:500}
+        .t{background:#1b5e20}     /* 交通 */
+        .f{background:#6a1b9a}     /* 食 */
+        .s{background:#0277bd}     /* 景點 */
+        .h{background:#880e4f}     /* 劇場 */
+        .o{background:#ef6c00}     /* 其他 */
+        .imp{background:#b71c1c !important;color:#fff !important;font-size:1.4em !important;padding:20px !important}
+        a{color:#ff8a80;text-decoration:none;font-weight:bold;float:right;font-size:1.3em}
+        .backup{padding:14px;background:#5d4037;color:#ffcc80;font-size:1em}
     </style>
 </head>
 <body>
-    <h1>2025 東京 6 日遊｜原生色彩完整版</h1>
-    <div class="countdown" id="cd">計算中…</div>
-    <div class="container">
 
-        <!-- Day 1 -->
-        <div class="day" onclick="this.classList.toggle('open')">
-            <div class="header">Day 1 – 12月3日（三）抵達</div>
-            <div class="details">
-                <div class="item traffic"><span class="time">07:00</span> 搭車去京急蒲田車站</div>
-                <div class="item sight"><span class="time">09:30</span> 高輪</div>
-                <div class="item shopping"><span class="time">10:00</span> NEWoMan高輪</div>
-                <div class="item food"><span class="time">11:30</span> スシロー 午餐</div>
-                <div class="item food"><span class="time">13:00</span> 六歌仙</div>
-                <div class="item food"><span class="time">13:30</span> 燒肉KING</div>
-                <div class="item food"><span class="time">14:00</span> 牛繁</div>
-                <div class="item food"><span class="time">14:30</span> hamburg品川</div>
-                <div class="item food"><span class="time">15:30</span> 炸豬扒</div>
-                <div class="item food"><span class="time">16:00</span> 拉麵</div>
-                <div class="item food"><span class="time">16:30</span> 燒肉</div>
-                <div class="item food"><span class="time">17:00</span> 鰻</div>
-                <div class="item sight"><span class="time">18:00</span> <a href="https://maps.apple.com/?q=六義園">六義園</a></div>
-                <div class="item sight"><span class="time">18:30</span> 神宮銀杏</div>
-                <div class="item sight"><span class="time">19:00</span> <a href="https://maps.apple.com/?q=新宿御苑">新宿御苑</a></div>
-                <div class="item sight"><span class="time">20:00</span> 豪徳寺</div>
-                <div class="item shopping"><span class="time">20:30</span> 幕張outlet</div>
-                <div class="item other"><span class="time">22:30</span> 川崎</div>
-                <div class="item sight"><span class="time">23:00</span> 渋谷</div>
-                <div class="backup">太攰直接回蒲田食拉麵休息</div>
-            </div>
-        </div>
+<h1>2025 東京 6 日遊</h1>
+<div id="cd">計算中…</div>
 
-        <!-- Day 2 ~ Day 6 已經全部按你 Sheet 顏色寫好（為免太長，先貼 Day 1+2 示範，其餘同理） -->
-        <!-- Day 2 -->
-        <div class="day" onclick="this.classList.toggle('open')">
-            <div class="header">Day 2 – 12月4日（四）</div>
-            <div class="details">
-                <div class="item sight"><span class="time">10:00</span> LUFTBAUM</div>
-                <div class="item sight"><span class="time">10:30</span> 28/29F</div>
-                <div class="item food"><span class="time">11:30</span> ただハンバーグが食べたい 午餐</div>
-                <div class="item food"><span class="time">13:00</span> 老秋</div>
-                <div class="item theater"><span class="time">13:30</span> AKB</div>
-                <div class="item other"><span class="time">16:00</span> 酒店 Check-in（VACATION INN KAMATA）</div>
-                <div class="item sight"><span class="time">16:30</span> 赤坂</div>
-                <div class="item theater"><span class="time">17:30</span> HP開演</div>
-                <div class="backup">AKB 改去幕張Outlet掃貨</div>
-            </div>
-        </div>
-
-        <!-- 其餘 Day 3–6 完全一樣邏輯，已寫好（因篇幅所限可直接用下面完整版） -->
-
-        <div class="spots">
-            隨時插隊備用點（Column A）：<br>
-            M記、京急蒲田、六歌仙、燒肉KING、牛繁、hamburg品川、炸豬扒、拉麵、燒肉、鰻、六義園、神宮銀杏、新宿御苑、豪徳寺、幕張outlet、川崎、渋谷…
-        </div>
+<!-- Day 1 -->
+<div class="day open" onclick="this.classList.toggle('open')">
+    <div class="hdr">12/3（三）抵達+高輪</div>
+    <div class="list">
+        <div class="i t">05:10 羽田→蒲田 <a href="https://maps.apple.com/?saddr=羽田空港第3ターミナル&daddr=京急蒲田駅&t=r">→</a></div>
+        <div class="i t">07:00 蒲田→高輪 <a href="https://maps.apple.com/?saddr=京急蒲田駅&daddr=高輪ゲートウェイ駅&t=r">→</a></div>
+        <div class="i o">10:00 NEWoMan高輪</div>
+        <div class="i f">11:30 スシロー</div>
+        <div class="i s">18:00 六義園 <a href="https://maps.apple.com/?q=六義園">→</a></div>
+        <div class="i s">23:00 渋谷 <a href="https://maps.apple.com/?q=渋谷">→</a></div>
+        <div class="i t">00:00前回蒲田 <a href="https://maps.apple.com/?saddr=渋谷駅&daddr=京急蒲田駅&t=r">→</a></div>
     </div>
+</div>
 
-    <script>
-        const target = new Date("2025-12-03T00:00:00");
-        function update() {
-            const diff = target - new Date();
-            if (diff < 0) { document.getElementById("cd").innerHTML = "東京我來了！"; return; }
-            const d = Math.floor(diff / 86400000);
-            const h = Math.floor((diff % 86400000) / 3600000);
-            const m = Math.floor((diff % 3600000) / 60000);
-            const s = Math.floor((diff % 60000) / 1000);
-            document.getElementById("cd").innerHTML = `距離出發仲有 ${d}日 ${h}小時 ${m}分 ${s}秒`;
-        }
-        setInterval(update, 1000); update();
-    </script>
+<!-- Day 2 -->
+<div class="day" onclick="this.classList.toggle('open')">
+    <div class="hdr">12/4（四）AKB+HP劇場</div>
+    <div class="list">
+        <div class="i t">11:30前 蒲田→秋葉原 <a href="https://maps.apple.com/?saddr=京急蒲田駅&daddr=秋葉原駅&t=r">→</a></div>
+        <div class="i h">13:30 AKB劇場</div>
+        <div class="i t">15:45 秋葉原→赤坂 <a href="https://maps.apple.com/?saddr=秋葉原駅&daddr=赤坂見附駅&t=r">→</a></div>
+        <div class="i h">17:30 Harry Potter</div>
+        <div class="i t">21:00後 赤坂→蒲田 <a href="https://maps.apple.com/?saddr=赤坂見附駅&daddr=京急蒲田駅&t=r">→</a></div>
+    </div>
+</div>
+
+<!-- Day 3 -->
+<div class="day" onclick="this.classList.toggle('open')">
+    <div class="hdr">12/5（五）公園日</div>
+    <div class="list">
+        <div class="i t">13:00前 蒲田→六義園 <a href="https://maps.apple.com/?saddr=京急蒲田駅&daddr=六義園&t=r">→</a></div>
+        <div class="i s">14:00 六義園</div>
+        <div class="i t">15:30 六義園→新宿御苑 <a href="https://maps.apple.com/?saddr=六義園&daddr=新宿御苑&t=r">→</a></div>
+        <div class="i t">20:00後回蒲田 <a href="https://maps.apple.com/?saddr=新宿駅&daddr=京急蒲田駅&t=r">→</a></div>
+    </div>
+</div>
+
+<!-- Day 4 -->
+<div class="day" onclick="this.classList.toggle('open')">
+    <div class="hdr">12/6（六）丸劇場</div>
+    <div class="list">
+        <div class="i t">16:30前 蒲田→九段下 <a href="https://maps.apple.com/?saddr=京急蒲田駅&daddr=九段下駅&t=r">→</a></div>
+        <div class="i h">18:30 開演</div>
+        <div class="i t">21:30後回蒲田 <a href="https://maps.apple.com/?saddr=九段下駅&daddr=京急蒲田駅&t=r">→</a></div>
+    </div>
+</div>
+
+<!-- Day 5 -->
+<div class="day" onclick="this.classList.toggle('open')">
+    <div class="hdr">12/7（日）池袋</div>
+    <div class="list">
+        <div class="i t">10:30 蒲田→池袋 <a href="https://maps.apple.com/?saddr=京急蒲田駅&daddr=池袋駅&t=r">→</a></div>
+        <div class="i f">11:00 炸豬扒</div>
+        <div class="i o">13:00 防災館</div>
+        <div class="i t">18:00後回蒲田 <a href="https://maps.apple.com/?saddr=池袋駅&daddr=京急蒲田駅&t=r">→</a></div>
+    </div>
+</div>
+
+<!-- Day 6 返程 重點紅色 -->
+<div class="day open" onclick="this.classList.toggle('open')">
+    <div class="hdr">12/8（一）返程 23:55起飛</div>
+    <div class="list">
+        <div class="i imp">
+            最遲20:30到京急蒲田站 → 羽田T3<br>
+            <a href="https://maps.apple.com/?saddr=京急蒲田駅&daddr=羽田空港第3ターミナル&t=r">16分鐘神路線</a>
+        </div>
+        <div class="i t">21:00前 Check-in</div>
+        <div class="backup">超緊 → 計程車直達羽田 ¥5000-6000</div>
+    </div>
+</div>
+
+<script>
+const target=new Date("2025-12-03T00:00:00");
+setInterval(()=>{
+    let d=target-new Date();
+    if(d<0){document.getElementById("cd").textContent="出發啦！";return;}
+    let dd=Math.floor(d/864e5),
+        hh=Math.floor(d%864e5/36e5),
+        mm=Math.floor(d%36e5/6e4),
+        ss=Math.floor(d%6e4/1e3);
+    document.getElementById("cd").textContent=`倒數 ${dd}日 ${hh}時 ${mm}分 ${ss}秒`;
+},1000);
+</script>
 </body>
 </html>
